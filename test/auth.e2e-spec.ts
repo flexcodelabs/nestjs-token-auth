@@ -170,23 +170,6 @@ describe('Authentication', () => {
       });
   });
 
-  /*
-  it('Login (After Changing Password)', async () => {
-    return request(app.getHttpServer())
-      .post(gql)
-      .send({
-        operationName: null,
-        variables: {},
-        query:
-          'mutation {login(login:{email: "test@test.com", password: "newPassword"}) {id name email accessToken}}',
-      })
-      .expect(200)
-      .expect(({ body }) => {
-        accessToken = body.data.login.token;
-        expect(body.data.login.name).toBe('Changed Name');
-      });
-  });*/
-
   it('Get logged in user', async () => {
     return request(app.getHttpServer())
       .post(gql)
